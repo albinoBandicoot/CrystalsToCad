@@ -1,0 +1,33 @@
+.mol2 to .scad converter
+
+This program builds on the functionality of the current .mol2 to .scad converter. It includes these features:
+
+- space filling and ball-and-stick modes
+- colored atoms in F5 preview
+- a simple GUI (can also run from command line)
+- is somewhat more robust and extensible than the current one.
+
+Overview of the files:
+
+Point.java		- basic methods for working with 3D points
+Atom.java		- defines a single atom in the molecule, generates SCAD code for the atom spheres
+Bond.java		- defines a bond, generates SCAD code for the bonds
+Molecule.java	- a whole molecule (just a list of atoms and a list of bonds)
+Converter.java	- code for reading the .mol2 file and top-level routine for writing the .scad file; also contains
+					the command-line main method.
+CrystalsToCAD.java	- graphical user interface.
+
+To run the GUI, just run 
+
+	java CrystalsToCAD
+
+after you've compiled everything (which you can do by typing 'javac *.java' from the command line)
+
+To run from the command line, run
+
+	java Converter [options] input_file
+
+The options are:
+	-sf			use space filling model (default)
+	-bs			use ball and stick model
+	-o <file>	use <file> as the output file, instead of a file automatically constructed from the input file name.
