@@ -4,19 +4,22 @@ import java.awt.event.*;
 import java.io.*;
 public class CrystalsToCAD extends JFrame implements ActionListener {
 
+	/* This is the GUI */
+
 	public JFileChooser fchooser = new JFileChooser();
 
-	public File inf, outf;
+	public File inf, outf;	// input and output files
 
-	public JComboBox mode;
-	public JLabel modeL;
-	public JLabel infileL;
-	public JLabel outfileL;
-	public JButton infile;
-	public JButton outfile;
-	public JButton convert;
+	public JComboBox mode;	// mode selector combobox (ball & stick or space filling, etc.)
+	public JLabel modeL;	// label for the mode selector
+	public JLabel infileL;	// label for the input file
+	public JLabel outfileL;	// label for the output file
+	public JButton infile;	// button to bring up file chooser for input file
+	public JButton outfile;	// button to bring up file chooser for output file
+	public JButton convert;	// button that causes the actual conversion to happen
 
 	public CrystalsToCAD () {
+		/* Set up the GUI components in this constructor */
 		super ("Crystals to CAD");
 		setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
 
@@ -52,6 +55,7 @@ public class CrystalsToCAD extends JFrame implements ActionListener {
 		convert.addActionListener (this);
 		convert.setActionCommand ("convert");
 
+		/* Don't forget to add everything to the content pane! */
 		content.add (mode);
 		content.add (modeL);
 		content.add (infileL);

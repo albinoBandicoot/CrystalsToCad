@@ -1,5 +1,7 @@
 public class Point {
 
+	/* Class for working with 3D points */
+
 	public double x, y, z;
 
 	public Point (double x, double y, double z){
